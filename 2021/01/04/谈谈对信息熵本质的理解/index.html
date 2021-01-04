@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>谈谈对信息熵本质的理解 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="一、序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;初次看到信息熵的公式有很多不理解的地方，只知道信息熵如何进行计算，却不懂得公式背后的原理，我通过查阅了一些资料，加深了对信息熵的理解，现在将这些理解分享给大家。如有疑问欢迎评论，若对你有帮助，麻烦点个赞。未经允许、请勿转载。（本文适合只知道信心熵的公式，但是不明白其中原理的人进行阅读） 二、什么是信息熵&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yuze98.wang/2021/01/04/%E4%B8%80%E6%96%87%E7%9C%8B%E6%87%82%E4%BF%A1%E6%81%AF%E7%86%B5%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%94%E2%80%94%E8%B0%88%E8%B0%88%E8%87%AA%E5%B7%B1%E5%AF%B9%E4%BF%A1%E6%81%AF%E7%86%B5%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:title" content="谈谈对信息熵本质的理解">
+<meta property="og:url" content="http://yuze98.wang/2021/01/04/%E8%B0%88%E8%B0%88%E5%AF%B9%E4%BF%A1%E6%81%AF%E7%86%B5%E6%9C%AC%E8%B4%A8%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一、序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;初次看到信息熵的公式有很多不理解的地方，只知道信息熵如何进行计算，却不懂得公式背后的原理，我通过查阅了一些资料，加深了对信息熵的理解，现在将这些理解分享给大家。如有疑问欢迎评论，若对你有帮助，麻烦点个赞。未经允许、请勿转载。（本文适合只知道信心熵的公式，但是不明白其中原理的人进行阅读） 二、什么是信息熵&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;n">
 <meta property="og:locale" content="en_US">
@@ -24,8 +24,8 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200424094310473.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200424101310790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200424102401714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2021-01-04T14:33:29.960Z">
-<meta property="article:modified_time" content="2021-01-04T14:33:14.009Z">
+<meta property="article:published_time" content="2021-01-04T14:35:49.000Z">
+<meta property="article:modified_time" content="2021-01-04T14:36:03.706Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200423164849928.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70">
@@ -85,15 +85,25 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-一文看懂信息熵的本质——谈谈自己对信息熵的理解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-谈谈对信息熵本质的理解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/04/%E4%B8%80%E6%96%87%E7%9C%8B%E6%87%82%E4%BF%A1%E6%81%AF%E7%86%B5%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%94%E2%80%94%E8%B0%88%E8%B0%88%E8%87%AA%E5%B7%B1%E5%AF%B9%E4%BF%A1%E6%81%AF%E7%86%B5%E7%9A%84%E7%90%86%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2021-01-04T14:33:29.960Z" itemprop="datePublished">2021-01-04</time>
+    <a href="/2021/01/04/%E8%B0%88%E8%B0%88%E5%AF%B9%E4%BF%A1%E6%81%AF%E7%86%B5%E6%9C%AC%E8%B4%A8%E7%9A%84%E7%90%86%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2021-01-04T14:35:49.000Z" itemprop="datePublished">2021-01-04</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      谈谈对信息熵本质的理解
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -108,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yuze98.wang/2021/01/04/%E4%B8%80%E6%96%87%E7%9C%8B%E6%87%82%E4%BF%A1%E6%81%AF%E7%86%B5%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%94%E2%80%94%E8%B0%88%E8%B0%88%E8%87%AA%E5%B7%B1%E5%AF%B9%E4%BF%A1%E6%81%AF%E7%86%B5%E7%9A%84%E7%90%86%E8%A7%A3/" data-id="ckjio2q4y0002s0ek8wgs5dy6" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://yuze98.wang/2021/01/04/%E8%B0%88%E8%B0%88%E5%AF%B9%E4%BF%A1%E6%81%AF%E7%86%B5%E6%9C%AC%E8%B4%A8%E7%9A%84%E7%90%86%E8%A7%A3/" data-id="ckjio2q4z0003s0ekbxy6d619" data-title="谈谈对信息熵本质的理解" class="article-share-link">Share</a>
       
       
       
@@ -118,19 +128,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/01/04/%E8%B0%88%E8%B0%88%E5%AF%B9%E4%BF%A1%E6%81%AF%E7%86%B5%E6%9C%AC%E8%B4%A8%E7%9A%84%E7%90%86%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          谈谈对信息熵本质的理解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/04/helloworld/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/04/%E4%B8%80%E6%96%87%E7%9C%8B%E6%87%82%E4%BF%A1%E6%81%AF%E7%86%B5%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%94%E2%80%94%E8%B0%88%E8%B0%88%E8%87%AA%E5%B7%B1%E5%AF%B9%E4%BF%A1%E6%81%AF%E7%86%B5%E7%9A%84%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">helloworld</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
