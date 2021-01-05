@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200424101310790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200424102401714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2021-01-04T15:33:02.000Z">
-<meta property="article:modified_time" content="2021-01-05T12:24:57.075Z">
+<meta property="article:modified_time" content="2021-01-05T14:23:11.928Z">
 <meta property="article:author" content="Yuze Wang">
 <meta property="article:tag" content="信息熵">
 <meta name="twitter:card" content="summary">
@@ -256,9 +256,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -398,7 +432,9 @@
 
       
         <h1 id="一、序言"><a href="#一、序言" class="headerlink" title="一、序言"></a>一、序言</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;初次看到信息熵的公式有很多不理解的地方，只知道信息熵如何进行计算，却不懂得公式背后的原理，我通过查阅了一些资料，加深了对信息熵的理解，现在将这些理解分享给大家。如有疑问欢迎评论，若对你有帮助，麻烦点个赞。未经允许、请勿转载。（本文适合只知道信心熵的公式，但是不明白其中原理的人进行阅读）</p>
-<h1 id="二、什么是信息熵"><a href="#二、什么是信息熵" class="headerlink" title="二、什么是信息熵"></a>二、什么是信息熵</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;正如我们想要衡量某个物体的质量引入了克这个单位、我们想衡量时间，我们设计一秒钟这么长。香农老人家想要量化一条消息中带有的“信息量”的大小，提出了信息熵。<br>那么，首先明确一个问题，什么样的消息算作“信息量大”呢？什么样的消息又算作“信息量小呢”？举个例子昨天小明和我说：“今天罗志祥又和周扬青秀恩爱了！”，我就觉得这有啥的，他们天天秀恩爱。也就是说小明的这条消息并不能给我带来很大的信息量。<br>    BUT今天小明和我说：”周扬青怒锤罗志祥!!!罗志祥人设崩塌！！！“，我就会很惊讶，因为这条消息给我的信息量很大。（类似的信息量很大的消息还有，小明告诉我今天太阳会从西边升起）<br><strong>我们用信息熵来描述一个事件混乱程度的大小（一个事件我们一定知道结果，那么这个事件的混乱程度就是0；一个时间充满随机性，我们猜不到或者很难猜到结果，那么他的混乱度就很大）</strong><br>引用下面一个在箱子里面摸球的例子，我们来更具体的了解信息熵。<br>（此例引自：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ErfnhcEV1O8">Youtube的一个视频</a>）<br><img src="https://img-blog.csdnimg.cn/20200423164849928.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>图左侧中有一个装有四个球的封闭箱子（这个箱子里面有三个红球、一个蓝球），现在我们从箱子中随机取出一个球，记录它的颜色后再放回箱子中，重复四次操作。如果你依次取出的序列为右上角所示（第一次取到红色、第二次取到红色、第三次取到红色、第四次取到蓝色），则你可以获得奖金；否则你就输了。大家用初中数学来算一算，我赢得奖金的概率是</p>
+<h1 id="二、什么是信息熵"><a href="#二、什么是信息熵" class="headerlink" title="二、什么是信息熵"></a>二、什么是信息熵</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;正如我们想要衡量某个物体的质量引入了克这个单位、我们想衡量时间，我们设计一秒钟这么长。香农老人家想要量化一条消息中带有的“信息量”的大小，提出了信息熵。<br>那么，首先明确一个问题，什么样的消息算作“信息量大”呢？什么样的消息又算作“信息量小呢”？举个例子昨天小明和我说：“今天罗志祥又和周扬青秀恩爱了！”，我就觉得这有啥的，他们天天秀恩爱。也就是说小明的这条消息并不能给我带来很大的信息量。<br>    BUT今天小明和我说：”周扬青怒锤罗志祥!!!罗志祥人设崩塌！！！“，我就会很惊讶，因为这条消息给我的信息量很大。（类似的信息量很大的消息还有，小明告诉我今天太阳会从西边升起）<br><strong>我们用信息熵来描述一个事件混乱程度的大小（一个事件我们一定知道结果，那么这个事件的混乱程度就是0；一个时间充满随机性，我们猜不到或者很难猜到结果，那么他的混乱度就很大）</strong><br>引用下面一个在箱子里面摸球的例子，我们来更具体的了解信息熵。<br>（此例引自：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ErfnhcEV1O8">Youtube的一个视频</a>）<br><img src="https://img-blog.csdnimg.cn/20200423164849928.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<a id="more"></a>
+<p>图左侧中有一个装有四个球的封闭箱子（这个箱子里面有三个红球、一个蓝球），现在我们从箱子中随机取出一个球，记录它的颜色后再放回箱子中，重复四次操作。如果你依次取出的序列为右上角所示（第一次取到红色、第二次取到红色、第三次取到红色、第四次取到蓝色），则你可以获得奖金；否则你就输了。大家用初中数学来算一算，我赢得奖金的概率是</p>
 <script type="math/tex; mode=display">
 
 P（x）=\frac{3}{4}*\frac{3}{4}*\frac{3}{4}*\frac{1}{4}=\frac{27}{256}</script><p>&emsp;&emsp;现在明确了这个游戏的规则，那么我们分析一下如下几个箱子和获胜概率<br><img src="https://img-blog.csdnimg.cn/20200423165753935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200423165836890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200423165853642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（每个图的左边是这个箱子的红球与蓝球初始条件，右侧是获胜所要求的序列，大家自己算算这个概率和图上写的一样吗？）<br><img src="https://img-blog.csdnimg.cn/20200423170009974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们来分析一下这三种状态的游戏，第一次由于箱子内全是红球、该箱子的随机性很弱，也就是说带来的信息量很小；第三个箱子随机性很强，也就是说带来的信息量很大。也就是说，我们算出的这个概率越接近1时候，这个信息熵应该越接近0；算出的这个概率越小的时候，信息熵反而应该越大。我们需要找到这么一个公式来满足这一点。（暂停思考一下，有哪些公式可以满足）<br>&emsp;<strong>该可以很轻松的想到，用刚才P（winning）的概率取倒数可以吗？</strong> 答案是，只考虑刚才的问题，是可以的。但取倒数这个方式还是存在一些问题，比如第三个箱子取0.0625的倒数，算出来的这个信息量为16，如果这个P（winning）概率算出结果很小时，取倒数后就会变得非常大，所以我们认为这个乘法的规则并不是很好。香农发现log函数可以很好的解决这个问题。 因为log(a<em>b) = log(a)+log(b);而恰巧像抽箱子的独立事件P(AB) = P(A）</em>P（B）。【原因不止于此，后面我们还会再详细讨论】。<br>所以香农取了一个-log(x)这么一个函数来表示某一状态的信息量大小，因为x是概率事件取[0,1],所以log(x)是一个递增的恒负的值，取一个负号，-log(x)是一个恒正、递减的函数，正好符合我们的预期。<br><img src="https://img-blog.csdnimg.cn/2020042410083693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjI0MDMw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
@@ -672,7 +708,7 @@ H（x）=\frac{1}{2}*log(2)+\frac{1}{4}*log(4)+\frac{1}{8}*log(8)+\frac{1}{8}*lo
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
@@ -851,6 +887,323 @@ H（x）=\frac{1}{2}*log(2)+\frac{1}{4}*log(4)+\frac{1}{8}*log(8)+\frac{1}{8}*lo
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
